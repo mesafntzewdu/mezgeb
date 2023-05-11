@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">mezgeb</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_add">Add</string>
+    <string name="menu_completed">Completed</string>
+    <string name="menu_about">Profile</string>
+    <string name="scrollview">"scroll "</string>
+    <string name="waist">wegeb</string>
+    <string name="appointment">appointment</string>
+    <string name="hip">hip</string>
+    <string name="footwidth">foot width</string>
+    <string name="user_name">user name</string>
+    <string name="phone_no">phone number</string>
+    <string name="shoulder">shoulder</string>
+    <string name="chest">chest</string>
+    <string name="height">height</string>
+    <string name="total_fee">total fee</string>
+    <string name="advance_payment">advance payment</string>
+    <string name="spinner">spinner</string>
+    <string name="full_name">ሙሉ ስም</string>
+    <string name="phone">ስልክ ቁጥር</string>
+    <string name="shoulderam">ትከሻ</string>
+    <string name="appointmentam">ቀጠሮ</string>
+    <string name="total_feeam">ጠቅላላ ዋጋ</string>
+    <string name="advance_paymentam">ተጨማሪ ሃሳብ</string>
+    <string name="suri">ሱሪ</string>
+    <string name="wegeb">መዝግብ</string>
+    <string name="kemis">ቀሚስ</string>
+    <string name="africakemis">አፍሪካ ቀሚስ</string>
+    <string name="tishert">ቲሸርት</string>
+    <string name="shfn">ሽፍን ስፍ</string>
+    <string name="fashn">ፋሽን</string>
+    <string name="chestam">ደረት</string>
+    <string name="heightam">ቁመት</string>
+    <string name="chapa">ዳሌ</string>
+    <string name="waistam">ወገብ</string>
+    <string name="footwidtham">እግር ስፋት</string>
+    <string name="search">Search</string>
+    <string name="ferg">Category</string>
+    <string name="_100">100</string>
+    <string name="yearlyincome">በአመት የሚያገኙት</string>
+    <string name="daylyincome">በቀን የሚያገኙት</string>
+    <string name="monthlyincome">በወር የሚያገኙት</string>
+    <string name="aaaaa">100</string>
+    <string name="aaaas">100</string>
+    <string name="email_mesafntzewdu_gmail_com">Email: mesafntzewdu@gmail.com</string>
+    <string name="phone_0703747672">Phone: 0703747672</string>
+    <string name="full_name_home">አበበ</string>
+    <string name="phone_home">09********</string>
+    <string name="shoulder_home">38</string>
+    <string name="chest_home">40</string>
+    <string name="height_home">1.0</string>
+    <string name="hip_home">25</string>
+    <string name="waist_home">30</string>
+    <string name="foot_width_home">14</string>
+    <string name="appintment_home">30</string>
+    <string name="total_fee_home">1000</string>
+    <string name="advanced_home">500</string>
+    <string name="export_data">Export data</string>
+    <string name="import_data">Import data</string>
+    <string name="designed_by">Designed by: መሳፍንት ዘውዱ</string>
+    <string name="todo">TODO</string>
+    <string name="telegram_mezgeb_chat_bot">Telegram Channel</string>
+    <string name="kebdi">ቀብድ</string>
+    <string name="ekumet">እ.ቁመት</string>
+    <string name="imagebName">የምስል ቁጥር</string>
+
+
+    <string-array name="suri">
+        <item>ኖርማል ሱሪ</item>
+        <item>ሲኪኒ ሱሪ</item>
+        <item>ቬል ሱሪ</item>
+        <item>ኮት ፓንት</item>
+    </string-array>
+
+    <string-array name="t_shirt">
+        <item>እጅጌ ጉርድ በ collection</item>
+        <item>እጅጌ ጉርድ ያለ collection</item>
+    </string-array>
+
+    <string-array name="kemis">
+        <item>ሺቲ</item>
+        <item>ተላላፊ</item>
+        <item>አይን አንገት</item>
+    </string-array>
+
+    <string-array name="shfnsff">
+        <item>ደቃቅ ሽንሽን normal</item>
+        <item>ደቃቅ ሽንሽን አስመራ</item>
+        <item>ጎን እና ጎን ክር</item>
+        <item>ዙሪያ ጎማ</item>
+    </string-array>
+
+    <string-array name="africa">
+        <item>ካውያ ቀሚስ</item>
+        <item>ሺቲ ቀሚስ</item>
+        <item>ፓሪ ቀሚስ</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>ቀሚስ</item>
+        <item>ሱሪ</item>
+        <item>ቲሸርት</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="comment">አስተያየት</string>
+    <string name="about_us">About us</string>
+    <string name="export">Export</string>
+    <string name="imports">Import</string>
+    <string name="kebdbirr">ሙሉ ስም፡</string>
+    <string name="netprofit">ስልክ ቁጥር</string>
+    <string name="comment1">Comment</string>
+    <string name="new_income">አጠቃላይ ገቢ</string>
+    <string name="new_advance">የቀብድ ብር</string>
+    <string name="imageName">የ ምስል ቁጥር</string>
+    <string name="a12">a12</string>
+    <string name="keteroken">የ ቀጠሮ ቀን</string>
+    <string name="hhhh">አላለቀም</string>
+    <string name="mezgebsplash">መዝገብ</string>
+    <string name="loading">Loading....</string>
+    <string name="hhhjjhj">አላለቀም</string>
+    <string name="yyyy">አላለቀም</string>
+</resources>

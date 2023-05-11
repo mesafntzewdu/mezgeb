@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".home_detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="4dp"
+        tools:ignore="UselessParent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20sp"
+        android:background="@drawable/shadow"
+        tools:ignore="ScrollViewSize">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/kebdbirr" />
+
+            <TextView
+                android:id="@+id/home_detail_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15sp"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/netprofit" />
+
+            <EditText
+                android:id="@+id/home_detail_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/shoulderam" />
+
+            <EditText
+                android:id="@+id/home_detail_sholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/chestam" />
+
+            <EditText
+                android:id="@+id/home_detail_chest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="61sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/heightam" />
+
+            <EditText
+                android:id="@+id/home_detail_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="49sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/ekumet" />
+
+            <EditText
+                android:id="@+id/home_detail_height1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/chapa" />
+
+            <EditText
+                android:id="@+id/home_detail_chapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/waistam" />
+
+            <EditText
+                android:id="@+id/home_detail_waist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="53sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/footwidtham" />
+
+            <EditText
+                android:id="@+id/home_detail_footwidth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:layout_marginTop="20sp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sample"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/csamleImage"
+                android:background="@drawable/baseline_image_24"
+                android:layout_width="130dp"
+                android:layout_height="120dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/imagebName" />
+
+            <EditText
+                android:id="@+id/home_detail_imagename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:padding="10sp"
+                android:text="@string/appointmentam"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/home_detail_appointment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45sp"
+                android:inputType="number"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/total_feeam" />
+
+            <EditText
+                android:id="@+id/home_detail_total_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/kebdi" />
+
+            <EditText
+                android:id="@+id/home_detail_kebdi"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginStart="49sp"
+                android:inputType="numberDecimal"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/advance_paymentam" />
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/home_detail_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:padding="10sp"
+                android:textColorHint="#004D40"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="SpeakableTextPresentCheck"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20sp"
+            android:padding="5sp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="@string/fashn" />
+
+            <EditText
+                android:id="@+id/home_detail_fashn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="59sp"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:padding="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20sp"
+            android:padding="5sp"
+            >
+
+
+            <Button
+                android:id="@+id/update_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="60sp"
+                android:text="ቀይር" />
+
+            <Button
+                android:id="@+id/delete_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40sp"
+                android:layout_weight="1"
+                android:text="አልቆአል" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
