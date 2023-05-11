@@ -41,6 +41,7 @@ import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
+import java.util.Objects;
 
 import javax.xml.transform.Result;
 
@@ -50,6 +51,8 @@ public class add extends Fragment {
     private String spinner_style = null;
     private Bitmap bm;
     ImageView img;
+
+    add frgAdd;
 
     public add() {
         // Required empty public constructor
@@ -62,6 +65,8 @@ public class add extends Fragment {
         View v = inflater.inflate(R.layout.fragment_add, container, false);
         //Initialize array of permissions
         PERMISSIONS = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+
+        frgAdd = new add();
 
         //image view widget instance
         img = v.findViewById(R.id.samleImage);
@@ -315,8 +320,8 @@ public class add extends Fragment {
 //
 //                }
 //            } else {
-                // requestPermissions(PERMISSIONS, 100);
-               // cameraPermission.launch(PERMISSIONS[1]);
+            // requestPermissions(PERMISSIONS, 100);
+            // cameraPermission.launch(PERMISSIONS[1]);
             //}
         }
     }
@@ -327,14 +332,14 @@ public class add extends Fragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             return Environment.isExternalStorageManager();
         } else {
-            return ContextCompat.checkSelfPermission(getContext(), PERMISSIONS[0]) == PackageManager.PERMISSION_GRANTED;
+            return ContextCompat.checkSelfPermission(requireContext(), PERMISSIONS[0]) == PackageManager.PERMISSION_GRANTED;
         }
     }
 
     //Camera permission checked here
     private boolean checkCameraPermission() {
 
-        return ContextCompat.checkSelfPermission(getContext(), PERMISSIONS[1]) == PackageManager.PERMISSION_GRANTED;
+        return ContextCompat.checkSelfPermission(requireContext(), PERMISSIONS[1]) == PackageManager.PERMISSION_GRANTED;
 
     }
 
@@ -342,7 +347,7 @@ public class add extends Fragment {
     ActivityResultLauncher<String> storagePermission = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
 
         if (isGranted) {
-            getImageBitmap();
+            //getImageBitmap();
         } else {
             Toast.makeText(getContext(), "All permissions has to be granted to work with the app.", Toast.LENGTH_LONG).show();
         }
@@ -352,7 +357,12 @@ public class add extends Fragment {
     ActivityResultLauncher<String> cameraPermission = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
 
         if (isGranted) {
-            getImageBitmap();
+
+            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, frgAdd).commit();
+
+            if (frgAdd != null) {
+                getImageBitmap();
+            }
         } else {
             Toast.makeText(getContext(), "All permissions has to be granted to work with the app.", Toast.LENGTH_LONG).show();
         }
@@ -383,17 +393,17 @@ public class add extends Fragment {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
         alert.setCancelable(false);
-        alert.setItems(items, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int position) {
-                if (items[position].equals("Camera")) {
-                    openCameraAndTakePicture();
-                }
-                if (items[position].equals("Gallery")) {
-                    openGalleryAndSavePicture();
-                }
+        alert.setItems(items, (dialogInterface, position) -> {
+            if (items[position].equals("Camera")) {
+                openCameraAndTakePicture();
+            }
+            if (items[position].equals("Gallery")) {
+                openGalleryAndSavePicture();
             }
         });
+
+        AlertDialog dialog = alert.create();
+        dialog.show();
 
     }
 
