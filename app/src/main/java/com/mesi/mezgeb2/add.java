@@ -113,6 +113,27 @@ public class add extends Fragment {
 
         submit.setOnClickListener(view -> {
 
+            if (storageCheckPermission()) {
+                //if its true leave it to run to the insertion
+            } else {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    try {
+                        Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                        Uri ui = Uri.fromParts("package", requireActivity().getPackageName(), null);
+                        i.setData(ui);
+                        startActivity(i);
+                    } catch (Exception e) {
+                        Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                        startActivity(i);
+                    }
+                } else {
+                    storagePermission.launch(PERMISSIONS[0]);
+                }
+
+                return;
+            }
+
+
             if (fname.getText().toString().equals("")) {
                 Toast.makeText(getContext(), "ስም ባዶ መሆን የለበትም!", Toast.LENGTH_LONG).show();
                 return;
@@ -149,6 +170,7 @@ public class add extends Fragment {
             }
 
             //Add Image into the folder and absolute path into the database
+            Log.d("path", getImageAbPath());
 
             boolean result = db.inserUser(fname.getText().toString(), phone_no.getText().toString(), shoulder.getText().toString(), chest.getText().toString(), height.getText().toString(), height1.getText().toString(), keteroken.getText().toString(), hip.getText().toString(), waist.getText().toString(),
                     foot_width.getText().toString(), image_name.getText().toString(), total_fee.getText().toString(), advance_payment.getText().toString(), comment.getText().toString(), spinner_style, String.valueOf(5), getImageAbPath());
@@ -164,38 +186,27 @@ public class add extends Fragment {
 
     private String getImageAbPath() {
 
-        File file = new File(Environment.getExternalStorageDirectory() + "/MEZGEB_DATA/file" + Calendar.getInstance().getTimeInMillis() + "sample.png");
+        File folder = new File(Environment.getExternalStorageDirectory() + "/MEZGEB_DATA/");
 
-        if (storageCheckPermission()) {
-
-            try {
-                FileOutputStream fos = new FileOutputStream(file);
-
-                bm.compress(Bitmap.CompressFormat.PNG, 90, fos);
-                fos.flush();
-                fos.close();
-
-                Log.d("File Write", "Succeeded");
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                try {
-                    Intent i = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    Uri ui = Uri.fromParts("package", requireActivity().getPackageName(), null);
-                    i.setData(ui);
-                    startActivity(i);
-                } catch (Exception e) {
-                    Intent i = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    startActivity(i);
-                }
-            } else {
-                storagePermission.launch(PERMISSIONS[0]);
-            }
+        if (!folder.exists()) {
+            folder.mkdirs();
         }
 
+        File file = new File(Environment.getExternalStorageDirectory() + "/MEZGEB_DATA/file" + Calendar.getInstance().getTimeInMillis() + "sample.png");
+
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+
+            bm.compress(Bitmap.CompressFormat.PNG, 90, fos);
+            fos.flush();
+            fos.close();
+
+            Log.d("File Write", "Succeeded");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return file.getAbsolutePath();
     }
@@ -302,27 +313,7 @@ public class add extends Fragment {
         if (checkCameraPermission()) {
             getImageBitmap();
         } else {
-
             cameraPermission.launch(PERMISSIONS[1]);
-
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//                if (!Environment.isExternalStorageManager()) {
-//
-//                    try {
-//                        Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//                        Uri ui = Uri.fromParts("package", requireActivity().getPackageName(), null);
-//                        i.setData(ui);
-//                        startActivity(i);
-//                    } catch (Exception e) {
-//                        Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//                        startActivity(i);
-//                    }
-//
-//                }
-//            } else {
-            // requestPermissions(PERMISSIONS, 100);
-            // cameraPermission.launch(PERMISSIONS[1]);
-            //}
         }
     }
 
@@ -357,34 +348,12 @@ public class add extends Fragment {
     ActivityResultLauncher<String> cameraPermission = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
 
         if (isGranted) {
-
-            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, frgAdd).commit();
-
-            if (frgAdd != null) {
-                getImageBitmap();
-            }
+            getImageBitmap();
         } else {
             Toast.makeText(getContext(), "All permissions has to be granted to work with the app.", Toast.LENGTH_LONG).show();
         }
 
     });
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//
-//        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//            if (requestCode == 100) {
-//                getImageBitmap();
-//            }
-//        } else if (grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-//            if (requestCode == 101) {
-//                getImageBitmap();
-//            }
-//        } else {
-//            Toast.makeText(getContext(), "All permissions has to be granted to work with the app.", Toast.LENGTH_LONG).show();
-//        }
-//    }
 
     //Get image bitmap from camera or gallery
     private void getImageBitmap() {

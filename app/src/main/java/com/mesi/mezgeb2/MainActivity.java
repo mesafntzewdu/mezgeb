@@ -1,7 +1,7 @@
 package com.mesi.mezgeb2;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.annotation.NonNull;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -11,26 +11,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.Settings;
-import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
-import android.text.style.TtsSpan;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
@@ -69,21 +57,20 @@ public class MainActivity extends AppCompatActivity {
             checkPay();
 
         } else {
-            requestPermissions(PERMISSION, 100);
+            readPhoneStatePermission.launch(PERMISSION[0]);
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    ActivityResultLauncher<String> readPhoneStatePermission = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted->{
 
-        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (isGranted)
+        {
             checkPay();
         }else
         {
             alertDialogForDeny();
         }
-    }
+    });
 
     private void alertDialogForL() {
 
