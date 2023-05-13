@@ -39,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
 
         Calendar cal2 = Calendar.getInstance();
-        cal2.set(Calendar.MONTH, 5);
+        cal2.set(Calendar.MONTH, 6);
+        cal2.set(Calendar.YEAR, 2023);
+        cal2.set(Calendar.DATE, 15);
 
         if (getIMEIDeviceId().equals("c94c8a1204c20952") || getIMEIDeviceId().equals("123456789") || cal.getTime().before(cal2.getTime())) {
             fragmentSwitch();
