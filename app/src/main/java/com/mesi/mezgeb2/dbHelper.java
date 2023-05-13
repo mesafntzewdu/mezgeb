@@ -132,7 +132,7 @@ public class dbHelper extends SQLiteOpenHelper {
                while (!c.isAfterLast()) {
                    userDAO user = new userDAO(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4),
                            c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10),
-                           c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16));
+                           c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16), c.getString(17));
 
                    uList.add(user);
                    c.moveToNext();
@@ -237,7 +237,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 while (!c.isAfterLast()) {
                     user = new userDAO(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4),
                             c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10),
-                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16));
+                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16), c.getString(17));
 
                     uList.add(user);
                     c.moveToNext();
@@ -304,7 +304,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 while (!c.isAfterLast()) {
                     userDAO user = new userDAO(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4),
                             c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10),
-                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16));
+                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16), c.getString(17));
 
                     uList.add(user);
                     c.moveToNext();
@@ -355,7 +355,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 while (!c.isAfterLast()) {
                     userDAO user = new userDAO(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4),
                             c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10),
-                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16));
+                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16), c.getString(17));
 
                     uList.add(user);
                     c.moveToNext();
@@ -387,7 +387,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 while (!c.isAfterLast()) {
                     userDAO user = new userDAO(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4),
                             c.getString(5), c.getString(6), c.getString(7), c.getString(8), c.getString(9), c.getString(10),
-                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16));
+                            c.getString(11), c.getString(12), c.getString(13), c.getString(14), c.getString(15), c.getString(16), c.getString(17));
 
                     uList.add(user);
                     c.moveToNext();

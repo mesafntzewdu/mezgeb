@@ -41,6 +41,10 @@ android {
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
         implementation 'androidx.work:work-runtime:2.8.0'
+
+        // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
+        implementation 'com.squareup.picasso:picasso:2.71828'
+
     }
 
 }

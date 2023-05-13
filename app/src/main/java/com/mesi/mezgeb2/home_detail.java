@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -37,6 +41,7 @@ public class home_detail extends Fragment {
     EditText comment;
     EditText style;
     EditText imageName;
+    ImageView csamleImage;
 
     Button update;
     Button delete;
@@ -75,6 +80,7 @@ public class home_detail extends Fragment {
         comment = v.findViewById(R.id.home_detail_comment);
         style = v.findViewById(R.id.home_detail_fashn);
         imageName = v.findViewById(R.id.home_detail_imagename);
+        csamleImage = v.findViewById(R.id.csamleImage);
 
         update = v.findViewById(R.id.update_user);
         delete = v.findViewById(R.id.delete_user);
@@ -94,6 +100,8 @@ public class home_detail extends Fragment {
         kebd.setText(hcdao.getAdvancePayment());
         comment.setText(hcdao.getComment());
         style.setText(hcdao.getStyle());
+
+        Picasso.get().load(new File(hcdao.getImagePath())).into(csamleImage);
 
         db = new dbHelper(getContext());
 

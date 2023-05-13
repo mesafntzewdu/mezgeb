@@ -21,6 +21,7 @@ public class listViewSingleUserList {
     private String advancePayment;
     private String comment;
     private String style;
+    private String imagePath;
 
     private static listViewSingleUserList ulistS;
 
@@ -35,6 +36,15 @@ public class listViewSingleUserList {
     //private constructor
     private listViewSingleUserList(){
 
+    }
+
+    public String getImagePath()
+    {
+        return imagePath;
+    }
+    public void setImagePath(String imgPath)
+    {
+        this.imagePath = imgPath;
     }
 
     public int getId() {

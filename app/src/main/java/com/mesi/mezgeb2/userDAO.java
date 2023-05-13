@@ -22,10 +22,12 @@ public class userDAO {
     private String advancePayment;
     private String comment;
     private String style;
+
+    private String imgPath;
     private final String cflag;
 
 
-    public userDAO(int id, String fname, String phone, String shoulder, String chest, String height, String height1, String dateap, String dale, String waist, String footWidth, String imageName, String totalFee, String advancePayment, String comment, String style, String cflag) {
+    public userDAO(int id, String fname, String phone, String shoulder, String chest, String height, String height1, String dateap, String dale, String waist, String footWidth, String imageName, String totalFee, String advancePayment, String comment, String style, String cflag, String imgPath) {
         this.id = id;
         this.fname = fname;
         this.phone = phone;
@@ -43,6 +45,7 @@ public class userDAO {
         this.comment = comment;
         this.style = style;
         this.cflag = cflag;
+        this.imgPath = imgPath;
     }
 
 
@@ -187,5 +190,14 @@ public class userDAO {
 
     public String cflag() {
         return cflag;
+    }
+
+    public String getImagePath() {
+
+        return imgPath;
+    }
+    public void setImagePath(String imgPath)
+    {
+        this.imgPath = imgPath;
     }
 }

@@ -126,6 +126,7 @@ public class home extends Fragment {
                 ulist.setTotalFee(clickedDAOS.get(0).getTotalFee());
                 ulist.setComment(clickedDAOS.get(0).getComment());
                 ulist.setStyle(clickedDAOS.get(0).getStyle());
+                ulist.setImagePath(clickedDAOS.get(0).getImagePath());
                 Toast.makeText(getContext(), ""+clickedDAOS.get(0).getFname(), Toast.LENGTH_SHORT).show();
                replaceFragment(new home_detail());
             }

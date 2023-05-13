@@ -12,9 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -36,6 +40,7 @@ public class completed_detail extends Fragment {
     TextView style;
 
     TextView imageName;
+    ImageView csamleImage;
 
 
     Button notYet;
@@ -75,6 +80,7 @@ public class completed_detail extends Fragment {
         style = v.findViewById(R.id.comp_detail_fashn);
         notYet = v.findViewById(R.id.notyet);
         delete4v = v.findViewById(R.id.forevdelete);
+        csamleImage = v.findViewById(R.id.csamleImage);
 
         listViewSingleUserList lvc =  listViewSingleUserList.listViewSingleInstance();
 
@@ -93,6 +99,8 @@ public class completed_detail extends Fragment {
         kebd.setText(lvc.getAdvancePayment());
         comment.setText(lvc.getComment());
         style.setText(lvc.getStyle());
+
+        Picasso.get().load(new File(lvc.getImagePath())).into(csamleImage);
 
         notYet.setOnClickListener(new View.OnClickListener() {
             @Override
